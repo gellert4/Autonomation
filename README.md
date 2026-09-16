@@ -1,21 +1,23 @@
-# Szalai Automation / Autonomation
+# VEYRO
 
-Dedicated production repository for the Szalai Automation website.
+Production landing site for VEYRO — websites, systems, automation and growth.
 
-## Branches
-- `main` – production source
-- `gh-pages` – GitHub Pages publish branch
-- `szalai-production` – production working branch
-- `szalai-automation` – compatibility/work branch migrated from the previous repository
+## Conversion stack
+- Working concept demos under `/demos/`
+- Qualified lead form with lead score + grade
+- UTM attribution + first-touch storage
+- FormSubmit email delivery
+- Consent-gated GA4 loader (disabled until a Measurement ID is added)
+- GitHub Pages deployment
 
-## Public URL
-`https://gellert4.github.io/Autonomation/`
+## GA4 activation
+Edit `analytics-config.js` and set `ga4MeasurementId` to the GA4 Measurement ID (`G-XXXXXXXXXX`). Until then, no Google Analytics script is loaded and no analytics banner is shown.
 
-## Features
-Responsive HU/EN landing page, dark/light mode, animated laptop hero, pricing, ROI calculator, lead form with FormSubmit + email fallback, privacy/legal/security pages, CSP, sitemap, robots.txt, manifest and accessibility/reduced-motion support.
+## Search Console
+After the final custom domain is registered, create a Domain property in Google Search Console and verify by DNS TXT. Then update canonical URLs, `siteUrl`, sitemap and GitHub Pages custom-domain settings.
 
-## GitHub Pages
-Settings → Pages → Deploy from a branch → `gh-pages` → `/(root)`.
+## UTM examples
+`/?utm_source=cold_email&utm_medium=email&utm_campaign=local_outreach&utm_content=restaurant`
 
-## Launch note
-Before commercial launch, add the real legally required business address, tax number and registration details to `terms.html`. Do not use guessed values.
+## Domain recommendation
+Preferred working domain: `madebyveyro.com` (verify availability again immediately before purchase).
