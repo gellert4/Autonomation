@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+<title id="title">VEYRO mark</title><desc id="desc">Abstract ascending flow mark</desc>
+<defs><linearGradient id="neon" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#00a94f"/><stop offset=".55" stop-color="#19ee70"/><stop offset="1" stop-color="#a2ffc0"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<path d="M65 72h95l35 63-54 105-37-67z" fill="#f4f7f5"/>
+<path d="M126 329 235 84l-39 11 91-52-9 112-27-35-78 209z" fill="url(#neon)" filter="url(#glow)"/>
+<path d="M84 347h198" stroke="#19ee70" stroke-width="9" stroke-linecap="round" opacity=".8" filter="url(#glow)"/>
+</svg>
