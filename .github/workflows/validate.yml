@@ -14,9 +14,9 @@ jobs:
       - name: Required files
         run: |
           set -e
-          for f in index.html styles.css production.css motion-enhancements.css script.js privacy.html terms.html security.html thanks.html 404.html logo.svg favicon.svg robots.txt sitemap.xml site.webmanifest vercel.json .nojekyll .well-known/security.txt; do test -e "$f" || exit 1; done
+          for f in index.html premium.css legal.css site.js privacy.html terms.html security.html thanks.html 404.html veyro-mark.svg veyro-favicon.svg robots.txt sitemap.xml site.webmanifest vercel.json .nojekyll .well-known/security.txt; do test -e "$f" || exit 1; done
       - name: JavaScript syntax
-        run: node --check script.js
+        run: node --check site.js
       - name: Parse JSON and XML
         run: |
           python - <<'PY'
@@ -33,4 +33,4 @@ jobs:
           trap 'kill $pid' EXIT
           sleep 1
           curl --fail --silent http://127.0.0.1:8080/ | grep -q 'VEYRO'
-          curl --fail --silent http://127.0.0.1:8080/privacy.html | grep -q 'Adatkezelési'
+          curl --fail --silent http://127.0.0.1:8080/privacy.html | grep -q 'VEYRO'
