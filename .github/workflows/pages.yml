@@ -18,5 +18,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Sync Pages branch
-        run: git push origin HEAD:gh-pages
+        run: git push --force origin HEAD:gh-pages
