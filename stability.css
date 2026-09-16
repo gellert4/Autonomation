@@ -1,0 +1,10 @@
+/* VEYRO fail-safe layer. Content must stay visible even if JavaScript or reveal effects fail. */
+[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}
+html,body{max-width:100%;overflow-x:hidden}
+main,section,.hero,.section,.hero-copy,.hero-stage,.stage-window,.service-grid,.price-grid,.field-grid,.calculator-wrap,.contact,.lead-form,footer{min-width:0}
+img,svg{max-width:100%}
+h1,h2,h3,p,span,a,label,summary,li{overflow-wrap:break-word}
+.hero-stage,.stage-window{max-width:100%}
+.site-header>*{min-width:0}
+@media(max-width:900px){.hero,.split-section,.calculator-wrap,.contact{grid-template-columns:minmax(0,1fr)!important}.hero-stage{width:min(700px,100%)!important}.stage-window{max-width:100%!important}}
+@media(max-width:640px){.hero,.section,.pricing,.contact{max-width:100%!important}.field-grid{grid-template-columns:minmax(0,1fr)!important}}
