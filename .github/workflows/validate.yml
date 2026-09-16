@@ -1,0 +1,36 @@
+name: Validate production site
+on:
+  push:
+    branches: [main, szalai-production]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Required files
+        run: |
+          set -e
+          for f in index.html styles.css production.css motion-enhancements.css script.js privacy.html terms.html security.html thanks.html 404.html logo.svg favicon.svg robots.txt sitemap.xml site.webmanifest vercel.json .nojekyll .well-known/security.txt; do test -e "$f" || exit 1; done
+      - name: JavaScript syntax
+        run: node --check script.js
+      - name: Parse JSON and XML
+        run: |
+          python - <<'PY'
+          import json, xml.etree.ElementTree as ET
+          json.load(open('site.webmanifest'))
+          json.load(open('vercel.json'))
+          ET.parse('sitemap.xml')
+          print('OK')
+          PY
+      - name: HTTP smoke test
+        run: |
+          python -m http.server 8080 >/tmp/site.log 2>&1 &
+          pid=$!
+          trap 'kill $pid' EXIT
+          sleep 1
+          curl --fail --silent http://127.0.0.1:8080/ | grep -q 'Szalai Automation'
+          curl --fail --silent http://127.0.0.1:8080/privacy.html | grep -q 'Adatkezelési'

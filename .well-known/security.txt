@@ -1,0 +1,5 @@
+Contact: mailto:szalai2003@gmail.com
+Expires: 2027-09-16T00:00:00Z
+Preferred-Languages: hu, en
+Canonical: https://gellert4.github.io/Autonomation/.well-known/security.txt
+Policy: https://gellert4.github.io/Autonomation/security.html
